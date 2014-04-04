@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<meta charset="utf-8" />
+<head>
+<title>contextmenu</title>
+
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" border="1">
+<tr>
+    <td id="firefox" height="60px" width="300px">firefox area</td>
+</tr>
+<tr>
+    <td id="chrome" height="60px" width="300px">chrome area</td>
+</tr>
+<tr>
+    <td id="default" height="60px" width="300px">default area</td>
+</tr>
+</table>
+
+<style type="text/css">
+/*div.firefox{ border:1px solid #979797; padding: 2px 1px; position:absolute; list-style-type: none; cursor: default; box-shadow: 5px 5px 2px -3px #888888; display: none; z-index:100; background: #f0f0f0; font-family: Tahoma; font-size: 12px;width: 214px;line-height: 10px;} 
+div.firefox ul { padding: 0px; color:#000; border-radius: 5px;list-style-type: none;float: left;width: 212px;margin:0px;border:0px solid #f0f0f0;height: 24px; padding-left: 1px;} 
+div.firefox ul:hover{ background: -moz-linear-gradient(top, #f3f5f7, #e7eef7); border: 1px solid #aecff7; height: 22px;line-height: 8px; padding-left: 0px;} 
+div.firefox ul:after{clear:both;}
+div.firefox ul:hover > li:first-child { padding-top: 3px;}
+div.firefox ul li{height: 20px; float: left;padding-top: 5px;} 
+div.firefox ul li:first-child{ width: 22px; border-right: 1px solid #e0e0e0;padding-top: 4px;padding-left: 4px;} 
+div.firefox ul li:nth-child(2){ padding-left: 4px; border-left: 1px solid #ffffff;width: 158px;} 
+div.firefox ul li:nth-child(3){ width: 17px;padding-left: 5px;}
+div.firefox ul.disable{ color:#6d6d6d; }
+div.firefox ul.disable:hover { color: #a1a192; background: -moz-linear-gradient(top, #f3f3f3, #e6e6e6); border:1px solid #d4d3d3}
+div.firefox ul.line {height: 2px; border: 0px;}
+div.firefox ul.line li {height: 2px;}
+div.firefox ul.line li:nth-child(2){ width: 184px;padding:0px;}
+div.firefox ul.line li hr {margin: 0px;border:0px;border-top: 1px solid #e0e0e0;border-bottom: 1px solid #ffffff;}
+div.firefox ul.line:hover { background: #f0f0f0; height: 2px; border: 0px;padding-left: 1px;} 
+
+
+
+div.chrome{ border:1px solid #bababa; padding: 2px 0px; position:absolute; list-style-type: none; cursor: default; box-shadow: 5px 5px 2px -3px #888888; display: none; z-index:100; background: #ffffff; font-family: Arial; font-size: 12px;width: 171px;line-height: 13px;} 
+div.chrome ul { padding: 0px; color:#000; list-style-type: none;float: left;width: 171px;margin:0px;} 
+
+div.chrome ul.hover{ background: #4281f4; } 
+div.chrome ul:after{clear:both;}
+div.chrome ul li{height: 18px; float: left;padding-top: 5px} 
+div.chrome ul li:first-child{ width: 30px; padding-top: 4px; padding-left: 4px;} 
+div.chrome ul li:nth-child(2){ padding-left: 4px; width: 111px;} 
+div.chrome ul li:nth-child(3){ width: 22px;} 
+div.chrome ul.disable{ color:#6d6d6d; } 
+div.chrome ul.disable:hover { background-color: #ffffff;} 
+div.chrome ul.line{height: 11px; }
+div.chrome ul.line li:nth-child(1){ width: 0px;padding: 0px;}
+div.chrome ul.line li:nth-child(2){ width: 171px;height: 1px; padding:5px 0px;}
+div.chrome ul.line li hr{ margin: 0px;height:0px;border:0px;border-top: 1px solid #e9e9e9;;}
+div.chrome ul.line:hover { background: #ffffff;} 
+*/
+</style>
+
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery.niContextMenu.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+function test(test){
+    alert(test);
+}
+
+var _items = [
+        {   title: '<U>B</U>ack', func: "test('this is a test')" },
+        {   title: '<U>F</U>orward', disable: true },
+        {   title: '<u>R</u>eload', src:"icon1.ico" },
+        {   title: 'Dest3',sub: [
+                                {   title:'sub test1' },
+                                {   title:'sub test2' },
+                                {   title:'sub test3', disable: true },
+                                {   isHorizon: true },
+                                {   title:'sub test4' },
+                                {   title:'sub test5', sub: [
+                                                            {   title:'sub2 test1' },
+                                                            {   title:'sub2 test2' },
+                                                            {   title:'sub2 test3' },
+                                                            {   title:'sub2 test4' },
+                                                            ] },
+                                {   title:'sub test6' },
+                                {   title:'sub test7' }
+                                ] },
+        {   isHorizon: true },
+        {   title: 'Eest4', src:"icon3.ico" },
+        {   title: 'Fest5', src:"icon2.ico" },
+        {   title: 'Gest6', sub: [
+                                    {   title:'sub2 test1' },
+                                    {   title:'sub2 test2' },
+                                    {   title:'sub2 test3' },
+                                ] },
+        {   title: 'Hest7', disable:true },
+        {   title: 'Iest8', sub: [
+                                    {   title:'sub3 test1' },
+                                    {   title:'sub3 test2' },
+                                    {   title:'sub3 test3' },
+                                ] },
+        ];
+
+$(function(){
+    //firefox area
+    $.niContextMenu({
+        area: "#firefox",
+        id: "firefox",
+        theme: "firefox",
+        items: _items
+    });
+
+    //chrome area
+    $.niContextMenu({
+        area: "#chrome",
+        id: "chrome",
+        theme: "chrome",
+        items: _items
+    });
+
+    //default area,
+    $.niContextMenu({
+        area: "#default",
+        id: "default",
+        items: _items
+    });
+});
+
+// var img = new Image();
+//         img.src = "4.jpg";
+//         var _canvas = $("<canvas />");
+//         var _ctx = _canvas[0].getContext("2d");
+
+//         $("body").append(_canvas[0]);
+ 
+// img.onload = function(){
+//         _ctx.drawImage(img,0,0);
+// }
+</script>
+
+
+</body>
+</html>
