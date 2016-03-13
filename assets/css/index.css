@@ -1,0 +1,32 @@
+header {
+	text-align: center;
+	margin: 120px 0px 20px;
+}
+header h1 {
+	font-size: 120px;
+	color: #efde8e;
+	font-family: Lucida Handwriting;
+}
+header h2 {
+	font-size: 20px;
+	color: #fff;
+}
+ul {
+	width: 940px;
+	margin: auto;
+	font-size: 0px;
+}
+ul li {
+	display: inline-block;
+	width: 188px;
+	font-size: 24px;
+	text-align: center;
+}
+ul a {
+	color: #000;
+	text-decoration: none;
+}
+ul li a:nth-child(2) {
+	margin: auto;
+	font-family: Bernard MT Condensed;
+}
