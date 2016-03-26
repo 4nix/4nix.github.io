@@ -31,7 +31,7 @@ ul li a:nth-child(2) {
 	font-family: Bernard MT Condensed;
 }
 
-ul li:nth-child(2) img {
+.turn-gray img {
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
@@ -40,6 +40,11 @@ ul li:nth-child(2) img {
 	filter: grayscale(100%);
 	filter: gray;
 }
+
+.turn-gray a:hover img {
+	animation: 4s turn-gray;
+}
+
 
 @keyframes turn-gray {
   0% {
@@ -62,17 +67,17 @@ ul li:nth-child(2) img {
   }
 }
 
-.turn-gray img:hover {
-	animation: 4s turn-gray;
-}
 
 
-.turn-rotate a:nth-child(1) {
+.turn-rotate a:nth-child(1),
+.turn-circle a:nth-child(1),
+.turn-cover a:nth-child(1) {
 	display: inline-block;
 	width: 188px;
 	height: 220px;
 	/*perspective: 1000px;*/
 }
+
 .turn-rotate span:before {
 	content: url(../images/image1_188x220.jpg);
 	height: 100%;
@@ -81,8 +86,8 @@ ul li:nth-child(2) img {
     top: 0px;
     left: 100%;
     transition: background 0.3s;
-    transform: rotateY(-90deg);
-    transform-origin: 0% 0%;
+    transform: rotateY(90deg);
+    transform-origin: 0% 50%;
 }
 
 .turn-rotate span {
@@ -92,49 +97,97 @@ ul li:nth-child(2) img {
 	background-image: url(../images/image1_188x220.jpg);
 	position: relative;
 	transition: transform 0.3s;
-	transform-origin: 0% 0%;
+	transform-origin: 50% 50% -94px;
 	transform-style: preserve-3d;
 }
 .turn-rotate a:nth-child(1):hover span {
 	/*transform: rotateY(90deg) translateX(-94px);*/
-	animation: turnrotate 1s linear infinite;
+	animation: turn-rotate 1s linear infinite;
 }
 
-@keyframes turnrotate {
-	to { transform: rotateY(90deg) translateX(-94px);}
+@keyframes turn-rotate {
+	to { transform: rotateY(-90deg) }
 }
 
 
-
-.cl-effect-2 a {
-	line-height: 44px;
-	perspective: 1000px;
-}
-
-.cl-effect-2 a span {
-	position: relative;
+.turn-circle span {
+	width: 100%;
+	height: 100%;
 	display: inline-block;
-	padding: 0 14px;
-	background: #2195de;
-	transition: transform 0.3s;
-	transform-origin: 50% 0;
-	transform-style: preserve-3d;
+	background-image: url(../images/image1_188x220.jpg);
+	position: relative;
 }
 
-.csstransforms3d .cl-effect-2 a span::before {
+.turn-circle span:before,
+.turn-circle span:after {
+	content: "";
 	position: absolute;
-	top: 100%;
-	left: 0;
-	background: #0965a0;
-	content: attr(data-hover);
-	transition: background 0.3s;
-	transform: rotateX(-90deg);
-	transform-origin: 50% 0;
+    height: 2px;
+    display: inline-block;
+    width: 2px;
+    border-radius: 50%;
+    z-index: 100;
+    opacity: 0;
 }
 
-.cl-effect-2 a:hover span,
-.cl-effect-2 a:focus span {
-	-webkit-transform: rotateX(90deg) translateY(-22px);
-	-moz-transform: rotateX(90deg) translateY(-22px);
-	transform: rotateX(90deg) translateY(-22px);
+.turn-circle span:before {
+	box-shadow: 0px 0px 5px 5px #fee473;
+	background-color: #fee473;
+	top: 50%;
+	left: -21px;
+	transform-origin: 110px 0px;
+}
+
+.turn-circle span:after {
+	box-shadow: 0px 0px 5px 5px #4979ea;
+	background-color: #4979ea;
+	top: 50%;
+    left: 204px;
+    transform-origin: -110px 0px;
+	
+}
+
+.turn-circle a:nth-child(1):hover span:before,
+.turn-circle a:nth-child(1):hover span:after {
+	opacity: 1;
+	animation: turn-circle 5s linear forwards;
+}
+
+@keyframes turn-circle {
+    to { 
+        transform: rotate(-360deg) ;
+    }
+}
+
+.turn-cover span:before {
+	content: url(../images/image1_188x220.jpg);
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: 0 50%;
+}
+
+.turn-cover span {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	background-image: url(../images/image1_188x220.jpg);
+	position: relative;
+}
+
+.turn-cover a:nth-child(1):hover span:before {
+	animation: turn-cover 1s linear forwards;
+}
+
+@keyframes turn-cover {
+	70% {
+		transform: rotateY(-90deg);
+		opacity: 1;
+	}
+	to { 
+		transform: rotateY(-180deg);
+		opacity: 0;
+	}
 }
