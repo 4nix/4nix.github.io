@@ -1,0 +1,47 @@
+body {
+	background: url(../images/night_background.jpg) repeat;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+header h1 {
+	text-align: center;
+	font-size: 34px;
+	margin: 44px 0px;
+}
+
+main {
+	width: 960px;
+	margin: auto;
+	font-size: 0;
+}
+
+main aside {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+	text-align: right;
+	padding-right: 40px;
+	font-size: 20px;
+}
+
+main aside li {
+	margin: 10px 0px;
+}
+
+#content {
+	display: inline-block;
+	width: 720px;
+	font-size: 20px;
+}
+
+#skills, #experience, #aboutme,
+[id^="skills-"] {
+	/*display: none;*/
+}
+
+
