@@ -110,16 +110,16 @@ ul li a:nth-child(2) {
 }
 
 
-.turn-circle span {
+.turn-circle .zhouyi {
 	width: 100%;
 	height: 100%;
 	display: inline-block;
-	background-image: url(../images/image1_188x220.jpg);
+	/*background-image: url(../images/image1_188x220.jpg);*/
 	position: relative;
 }
 
-.turn-circle span:before,
-.turn-circle span:after {
+.turn-circle .zhouyi:before,
+.turn-circle .zhouyi:after {
 	content: "";
 	position: absolute;
     height: 2px;
@@ -130,7 +130,7 @@ ul li a:nth-child(2) {
     opacity: 0;
 }
 
-.turn-circle span:before {
+.turn-circle .zhouyi:before {
 	box-shadow: 0px 0px 5px 5px #fee473;
 	background-color: #fee473;
 	top: 50%;
@@ -138,7 +138,7 @@ ul li a:nth-child(2) {
 	transform-origin: 110px 0px;
 }
 
-.turn-circle span:after {
+.turn-circle .zhouyi:after {
 	box-shadow: 0px 0px 5px 5px #4979ea;
 	background-color: #4979ea;
 	top: 50%;
@@ -147,15 +147,89 @@ ul li a:nth-child(2) {
 	
 }
 
-.turn-circle a:nth-child(1):hover span:before,
-.turn-circle a:nth-child(1):hover span:after {
+.zhouyi- {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    /*border-radius: 200px;*/
+    background-color: #eee;
+    animation: 3s rolla linear infinite;
+}
+.zhouyi-1,
+.zhouyi-2 {
+	width: 94px;
+    height: 188px;
+    position: absolute;
+    z-index: 100;
+    top: 16px;
+}
+.zhouyi-1 {
+	left: 0;
+    background-color: #fff;
+    border-radius: 94px 0px 0px 94px;
+}
+.zhouyi-2 {
+    background-color: #000;
+    left: 94px;
+    border-radius: 0px 94px 94px 0px;
+}
+.zhouyi-3,
+.zhouyi-4 {
+    width: 48px;
+    height: 94px;
+    position: absolute;
+    z-index: 101;
+}
+.zhouyi-3 {
+    background-color: #fff;
+    left: 93px;
+    top: 16px;
+    border-radius: 0px 94px 94px 0px;
+}
+.zhouyi-4 {
+    background-color: #000;
+    left: 48px;
+    top: 110px;
+    border-radius: 94px 0px 0px 94px;
+}
+.zhouyi-5,
+.zhouyi-6 {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 102;
+    border-radius: 20px;
+}
+.zhouyi-5 {
+    background-color: #fff;
+    left: 84px;
+    top: 156px;
+}
+.zhouyi-6 {
+    background-color: #000;
+    left: 84px;
+    top: 56px;
+}
+
+
+.turn-circle a:nth-child(1):hover .zhouyi:before,
+.turn-circle a:nth-child(1):hover .zhouyi:after {
 	opacity: 1;
-	animation: turn-circle 5s linear forwards;
+	animation: turn-circle 5s linear infinite;
+}
+.turn-circle a:nth-child(1):hover .zhouyi {
+	animation: turn-circle-zhouyi 5s linear infinite;
 }
 
 @keyframes turn-circle {
     to { 
-        transform: rotate(-360deg) ;
+        transform: rotate(360deg) ;
+    }
+}
+
+@keyframes turn-circle-zhouyi {
+    to{
+        transform: rotate(360deg);
     }
 }
 
