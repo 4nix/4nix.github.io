@@ -78,35 +78,98 @@ ul li a:nth-child(2) {
 	/*perspective: 1000px;*/
 }
 
-.turn-rotate span:before {
-	content: url(../images/image1_188x220.jpg);
+/*.turn-rotate span:before {
+	content: url(../images/image3-2.jpg);
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: background 0.3s;
+    transform: rotateY(60deg);
+    transform-origin: 0% 100%;
+}
+
+.turn-rotate span:after {
+	content: url(../images/image3-2.jpg);
 	height: 100%;
     width: 100%;
     position: absolute;
     top: 0px;
     left: 100%;
     transition: background 0.3s;
-    transform: rotateY(90deg);
-    transform-origin: 0% 50%;
-}
+    transform: rotateY(120deg);
+    transform-origin: 0% 0%;
+}*/
 
-.turn-rotate span {
+/*.turn-rotate span {
 	width: 100%;
 	height: 100%;
 	display: inline-block;
-	background-image: url(../images/image1_188x220.jpg);
+	background-image: url(../images/image3-1.jpg);
 	position: relative;
 	transition: transform 0.3s;
-	transform-origin: 50% 50% -94px;
+	transform-origin: 0% 0%;
 	transform-style: preserve-3d;
 }
 .turn-rotate a:nth-child(1):hover span {
-	/*transform: rotateY(90deg) translateX(-94px);*/
-	animation: turn-rotate 1s linear infinite;
+	animation: turn-rotate 3s linear infinite;
 }
 
 @keyframes turn-rotate {
-	to { transform: rotateY(-90deg) }
+	to { transform: rotateY(-360deg) }
+}*/
+.rotate-container {
+	transform-origin: 50% 50%;
+	transform-style: preserve-3d;
+	position: relative;
+	width: 188px;
+	height: 220px;
+	display: inline-block;
+	font-size: 0px;
+}
+.rotate-container span {
+	display: inline-block;
+	width: 188px;
+	height: 220px;
+	/*background-image: url(../images/image3-1.jpg);*/
+	position: absolute;
+	font-size: 0px;
+}
+.rotate-container span:nth-child(1) {
+	background-image: url(../images/image3-1.jpg);
+	transform: translateZ(94px);
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+.rotate-container span:nth-child(2) {
+	background-image: url(../images/image3-4.jpg);
+	transform: rotateY(270deg) translateZ(94px);
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+.rotate-container span:nth-child(3) {
+	background-image: url(../images/image3-3.jpg);
+	transform: rotateY(180deg) translateZ(94px);
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+.rotate-container span:nth-child(4) {
+	background-image: url(../images/image3-2.jpg);
+	transform: rotateY(90deg) translateZ(94px);
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+.turn-rotate a:nth-child(1):hover .rotate-container {
+	animation: turn-rotate 3s linear infinite;
+}
+
+@keyframes turn-rotate {
+	to { transform: rotateY(-360deg) }
 }
 
 
@@ -234,7 +297,7 @@ ul li a:nth-child(2) {
 }
 
 .turn-cover span:before {
-	content: url(../images/image1_188x220.jpg);
+	content: url(../images/image5-1.jpg);
 	height: 100%;
     width: 100%;
     position: absolute;
@@ -247,7 +310,7 @@ ul li a:nth-child(2) {
 	width: 100%;
 	height: 100%;
 	display: inline-block;
-	background-image: url(../images/image1_188x220.jpg);
+	background-image: url(../images/image5-2.jpg);
 	position: relative;
 }
 
