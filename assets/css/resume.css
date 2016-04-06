@@ -16,7 +16,7 @@ header, main {
 }
 
 header {
-	height: 280px;
+	height: 180px;
 	background-color: #000;
 	color: #fff;
 }
@@ -29,7 +29,7 @@ header h1 {
 /* main */
 
 main {
-	height: 882px;
+	height: 982px;
 	background-color: #fff;
 	margin: auto;
 	/*font-size: 0;*/
@@ -37,8 +37,8 @@ main {
 }
 
 main h1 {
-	border-bottom: 1px solid #eee;
-	padding: 10px 5px;
+	border-bottom: 2px dashed #a9a2a2;
+	padding: 10px 4px;
 	font-size: 20px;
 }
 
@@ -54,36 +54,47 @@ main h1 {
 	display: inline-block;
 }
 
-.cols-m-1 {
-	width: 25%;
-}
-
-.cols-m-2 {
-	width: 50%;
-}
 
 .cols-s-1 {
-	width: 15%;
+	width: 10%;
 }
 
 .cols-s-2 {
-	width: 30%;
-}
-
-.cols-s-3 {
-	width: 45%;
-}
-
-.cols-s-4 {
-	width: 60%;
-}
-
-.cols-f-0 {
 	width: 20%;
 }
 
+.cols-s-3 {
+	width: 30%;
+}
+
+.cols-s-4 {
+	width: 40%;
+}
+
 .cols-f-1 {
-	
+	flex-grow: 1;
+}
+
+.cols-f-2 {
+	flex-grow: 2;
+}
+
+.cols-f-3 {
+	flex-grow: 4;
+}
+
+.cols-f-4 {
+	flex-grow: 5;
+}
+
+.ml20 {
+	margin-left: 20px;
+}
+
+.text-title {
+	text-align: justify;
+	text-align-last: justify;
+	-webkit-text-align-last: justify;
 }
 
 /* skills */
@@ -91,10 +102,106 @@ main h1 {
 .skills {
 	width: 100%;
 	font-size: 0px;
+	display: flex;
+	flex-flow: row wrap;
 }
 
 .skills li {
-	display: inline-block;
-	width: 25%;
+	flex: 1 1 20%;
 	font-size: 16px;
+	text-align: center;
+	padding: 15px 0px;	
+}
+
+.svg-field {
+	position: relative;
+}
+
+.svg-field:before {
+	background-color: #000;
+	border-radius: 4px;
+	color: #fff;
+	content: attr(data-info);
+	width: 50%;
+	position: absolute;
+	left: 25%;
+	bottom: 55px;
+	display: none;
+}
+
+.svg-field:after {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #000;
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 48%;
+	bottom: 51px;
+	display: none;
+}
+
+.svg-field:hover {
+	cursor: pointer;
+}
+
+.svg-field:hover:before, .svg-field:hover:after {
+	display: block;
+}
+
+[class^="star-"] {
+	background: #eee;
+	width: 50%;
+	margin: auto;
+	height: 20px;
+	display: block;
+}
+
+.star-0 {
+	background: radial-gradient(10px at 10% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);
+}
+
+.star-1 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);
+}
+
+.star-2 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);	
+}
+
+.star-3 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);	
+}
+
+.star-4 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);
+}
+
+.star-5 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #4a4545 0%, #4a4545 50%, transparent 50%);	
 }
