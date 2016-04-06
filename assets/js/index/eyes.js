@@ -69,9 +69,6 @@ define(['jquery'], function(jquery) {
 			doIt();
 
 
-
-
-
 			canvas.appendTo("body");
 
 			return canvas;

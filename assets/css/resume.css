@@ -1,6 +1,7 @@
 body {
-	background: url(../images/night_background.jpg) repeat;
+	background: url(../images/table1.jpg) repeat;
 	color: #fff;
+	font: 12px/1.5 arial,verdana,Microsoft YaHei,Tahoma,Simsun,sans-serif;
 }
 
 a {
@@ -8,40 +9,92 @@ a {
 	color: #fff;
 }
 
-header h1 {
-	text-align: center;
-	font-size: 34px;
-	margin: 44px 0px;
+header, main {
+	width: 802px;
+	margin: 0px auto;
+	padding: 20px;
 }
+
+header {
+	height: 280px;
+	background-color: #000;
+	color: #fff;
+}
+
+
+header h1 {
+	font-size: 34px;
+}
+
+/* main */
 
 main {
-	width: 960px;
+	height: 882px;
+	background-color: #fff;
 	margin: auto;
-	font-size: 0;
+	/*font-size: 0;*/
+	color: #000;
 }
 
-main aside {
-	display: inline-block;
-	width: 200px;
-	vertical-align: top;
-	text-align: right;
-	padding-right: 40px;
+main h1 {
+	border-bottom: 1px solid #eee;
+	padding: 10px 5px;
 	font-size: 20px;
 }
 
-main aside li {
-	margin: 10px 0px;
+/* row */
+
+.row {
+	padding: 10px 50px;
+	font-size: 16px;
+	display: flex;
 }
 
-#content {
+[class^="cols-"] {
 	display: inline-block;
-	width: 720px;
-	font-size: 20px;
 }
 
-#skills, #experience, #aboutme,
-[id^="skills-"] {
-	/*display: none;*/
+.cols-m-1 {
+	width: 25%;
 }
 
+.cols-m-2 {
+	width: 50%;
+}
 
+.cols-s-1 {
+	width: 15%;
+}
+
+.cols-s-2 {
+	width: 30%;
+}
+
+.cols-s-3 {
+	width: 45%;
+}
+
+.cols-s-4 {
+	width: 60%;
+}
+
+.cols-f-0 {
+	width: 20%;
+}
+
+.cols-f-1 {
+	
+}
+
+/* skills */
+
+.skills {
+	width: 100%;
+	font-size: 0px;
+}
+
+.skills li {
+	display: inline-block;
+	width: 25%;
+	font-size: 16px;
+}
