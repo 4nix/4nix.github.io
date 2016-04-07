@@ -5,7 +5,7 @@ body {
 }
 
 a {
-	text-decoration: none;
+	/*text-decoration: none;*/
 	color: #fff;
 }
 
@@ -16,7 +16,7 @@ header, main {
 }
 
 header {
-	height: 180px;
+	height: 162px;
 	background-color: #000;
 	color: #fff;
 }
@@ -26,10 +26,11 @@ header h1 {
 	font-size: 34px;
 }
 
+
 /* main */
 
 main {
-	height: 982px;
+	height: 1000px;
 	background-color: #fff;
 	margin: auto;
 	/*font-size: 0;*/
@@ -45,7 +46,7 @@ main h1 {
 /* row */
 
 .row {
-	padding: 10px 50px;
+	padding: 8px 50px;
 	font-size: 16px;
 	display: flex;
 }
@@ -91,7 +92,7 @@ main h1 {
 	margin-left: 20px;
 }
 
-.text-title {
+.text-justify {
 	text-align: justify;
 	text-align-last: justify;
 	-webkit-text-align-last: justify;
@@ -110,7 +111,7 @@ main h1 {
 	flex: 1 1 20%;
 	font-size: 16px;
 	text-align: center;
-	padding: 15px 0px;	
+	padding: 10px 0px;	
 }
 
 .svg-field {
@@ -122,10 +123,13 @@ main h1 {
 	border-radius: 4px;
 	color: #fff;
 	content: attr(data-info);
-	width: 50%;
+	min-width: 50%;
 	position: absolute;
 	left: 25%;
 	bottom: 55px;
+	padding: 10px;
+	font-size: 12px;
+	text-align: left;
 	display: none;
 }
 
@@ -204,4 +208,48 @@ main h1 {
 	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
 	            radial-gradient(10px at 70% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
 	            radial-gradient(10px at 90% 50%, #4a4545 0%, #4a4545 50%, transparent 50%);	
+}
+
+.work {
+	position: relative;
+	cursor: pointer;
+}
+
+.work:before, .work:after {
+	border-bottom: 1px solid #144e25;
+	position: absolute;
+}
+
+.work:after {
+	content: attr(data-info);
+	/*right: -328px;*/
+	bottom: 200%;
+	background-color: #fff;
+	min-width: 40%;;
+	z-index: 10;
+	padding: 0px 10px;
+	white-space: nowrap;
+	display: none;
+	color: #274417;
+}
+
+.work:before {
+	content: "";
+	transform: rotate(-45deg);
+	bottom: 150%;
+	left: 100%;
+	width: 40px;
+	z-index: 9;
+	display: none;
+}
+
+.work:hover:after, .work:hover:before {
+	display: inline-block;
+}
+
+.passage {
+	line-height: 1.6;
+}
+.passage p {
+	text-indent: 2em;
 }
