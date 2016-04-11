@@ -9,14 +9,20 @@ define(['jquery'], function(jquery) {
 			var screenHeight = $(document).height();
 
 			var canvas = $("<canvas width='"+screenWidth+"' height='"+screenHeight+"'>");
-			canvas.css({"position": "absolute", "z-index": -1, "top": 0, "left": 0, "display": "none"});
+			canvas.css({"position": "absolute", 
+						"z-index": -1, 
+						"top": 0, 
+						"left": 0, 
+						"display": "none", 
+						"background-color": "#000"
+					});
 			var ctx = canvas[0].getContext("2d");
 			var i = 0;	//动画计数
 
-			function doIt() {
-				
-				ctx.fillStyle = "#000";
-				ctx.fillRect(0, 0, screenWidth, screenHeight);
+			function drawIt() {
+				// ctx.beginPath();
+				// ctx.fillStyle = "#000";
+				// ctx.fillRect(0, 0, screenWidth, screenHeight);
 				ctx.save();
 
 				ctx.translate(screenWidth/2, screenHeight/2);
@@ -64,9 +70,9 @@ define(['jquery'], function(jquery) {
 
 				ctx.restore();
 				i = i + 4;
-				window.requestAnimationFrame(doIt);
+				window.requestAnimationFrame(drawIt);
 			}
-			doIt();
+			drawIt();
 
 
 			canvas.appendTo("body");
@@ -92,18 +98,22 @@ define(['jquery'], function(jquery) {
 			//眼眶
 			ctx.beginPath();
 			ctx.moveTo(topEyePositionX, -eyeHeight);
-			ctx.lineTo(prefix*eyeHeight, -eyeHeight);
-			ctx.arcTo(0, -eyeHeight, 0, 0, eyeHeight);
-			ctx.lineTo(-eyeHeight, 0);
-			ctx.arcTo(topEyePositionX, 0, topEyePositionX, -eyeHeight, eyeHeight);
+			// ctx.lineTo(prefix*eyeHeight, -eyeHeight);
+			// ctx.arcTo(0, -eyeHeight, 0, 0, eyeHeight);
+			ctx.quadraticCurveTo(topEyePositionX/8, -0.8*eyeHeight, 0, 0);
+			// ctx.lineTo(-eyeHeight, 0);
+			// ctx.arcTo(topEyePositionX, 0, topEyePositionX, -eyeHeight, eyeHeight);
+			ctx.quadraticCurveTo(topEyePositionX, 0.3*eyeHeight, topEyePositionX, -eyeHeight);
 			ctx.fill();
-
+			
 			//眼球
 			ctx.translate((topEyePositionX)/2, -eyeHeight/2);
+			ctx.globalCompositeOperation = "source-atop";
 			ctx.beginPath();
-			ctx.fillStyle = "#f00";
+			ctx.fillStyle = "#b00";
 			ctx.arc(0, 0, eyeHeight/2.2, 0, 2*Math.PI);
 			ctx.fill();
+			
 
 			//外框
 			ctx.beginPath();
@@ -116,6 +126,8 @@ define(['jquery'], function(jquery) {
 			ctx.strokeStyle = "#000";
 			ctx.arc(0, 0, eyeHeight/4.4, 0, 2*Math.PI);
 			ctx.stroke();
+
+			ctx.globalCompositeOperation = "source-over";
 
 			// ctx.restore();
 		},
@@ -142,8 +154,10 @@ define(['jquery'], function(jquery) {
 		type: 勾玉尾方向, true: 向右, false: 向左
 		*/
 		_drawAroundPot: function(ctx, range, randian, angle, type) {
+			
 			var prefix = type ? -1 : 1;
 			ctx.save();
+			ctx.globalCompositeOperation = "source-atop";
 			ctx.rotate(angle*Math.PI/180);
 			ctx.translate(0, -range);
 			ctx.fillStyle = "#000";
@@ -157,6 +171,7 @@ define(['jquery'], function(jquery) {
 			ctx.quadraticCurveTo(0, -1.5*randian, -prefix*randian, 0);
 			ctx.fill();
 			ctx.restore();
+			// ctx.globalCompositeOperation = "source-over";
 		}
 
 	}

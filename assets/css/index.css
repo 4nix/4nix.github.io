@@ -42,7 +42,7 @@ ul li a:nth-child(2) {
 }
 
 .turn-gray a:hover img {
-	animation: 4s turn-gray;
+	animation: 4s turn-gray forwards;
 }
 
 
