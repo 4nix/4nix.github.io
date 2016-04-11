@@ -10,10 +10,13 @@ require.config({
 require(["eyes", "jquery"], function(eyes, jquery) {
  	var canvasObj = eyes.draw("你是一条咸鱼...你是一条咸鱼...")
 	$("#nav_eye").mouseover(function() {
+		eyes.reset();
   		canvasObj.fadeIn("slow");
 	  	$("header, nav").animate({
 	  		"opacity":0
-	  	}, 1000);
+	  	}, 1000, function() {
+	  		eyes.open();
+	  	});
   	});
 
 	$("#nav_eye").mouseout(function() {
