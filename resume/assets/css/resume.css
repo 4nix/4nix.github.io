@@ -1,0 +1,255 @@
+body {
+	background: url(../images/table1.jpg) repeat;
+	color: #fff;
+	font: 12px/1.5 arial,verdana,Microsoft YaHei,Tahoma,Simsun,sans-serif;
+}
+
+a {
+	/*text-decoration: none;*/
+	color: #fff;
+}
+
+header, main {
+	width: 802px;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+header {
+	height: 162px;
+	background-color: #000;
+	color: #fff;
+}
+
+
+header h1 {
+	font-size: 34px;
+}
+
+
+/* main */
+
+main {
+	height: 1000px;
+	background-color: #fff;
+	margin: auto;
+	/*font-size: 0;*/
+	color: #000;
+}
+
+main h1 {
+	border-bottom: 2px dashed #a9a2a2;
+	padding: 10px 4px;
+	font-size: 20px;
+}
+
+/* row */
+
+.row {
+	padding: 8px 50px;
+	font-size: 16px;
+	display: flex;
+}
+
+[class^="cols-"] {
+	display: inline-block;
+}
+
+
+.cols-s-1 {
+	width: 10%;
+}
+
+.cols-s-2 {
+	width: 20%;
+}
+
+.cols-s-3 {
+	width: 30%;
+}
+
+.cols-s-4 {
+	width: 40%;
+}
+
+.cols-f-1 {
+	flex-grow: 1;
+}
+
+.cols-f-2 {
+	flex-grow: 2;
+}
+
+.cols-f-3 {
+	flex-grow: 4;
+}
+
+.cols-f-4 {
+	flex-grow: 5;
+}
+
+.ml20 {
+	margin-left: 20px;
+}
+
+.text-justify {
+	text-align: justify;
+	text-align-last: justify;
+	-webkit-text-align-last: justify;
+}
+
+/* skills */
+
+.skills {
+	width: 100%;
+	font-size: 0px;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.skills li {
+	flex: 1 1 20%;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px 0px;	
+}
+
+.svg-field {
+	position: relative;
+}
+
+.svg-field:before {
+	background-color: #000;
+	border-radius: 4px;
+	color: #fff;
+	content: attr(data-info);
+	min-width: 50%;
+	position: absolute;
+	left: 25%;
+	bottom: 55px;
+	padding: 10px;
+	font-size: 12px;
+	text-align: left;
+	display: none;
+}
+
+.svg-field:after {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid #000;
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 48%;
+	bottom: 51px;
+	display: none;
+}
+
+.svg-field:hover {
+	cursor: pointer;
+}
+
+.svg-field:hover:before, .svg-field:hover:after {
+	display: block;
+}
+
+[class^="star-"] {
+	background: #eee;
+	width: 50%;
+	margin: auto;
+	height: 20px;
+	display: block;
+}
+
+.star-0 {
+	background: radial-gradient(10px at 10% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);
+}
+
+.star-1 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);
+}
+
+.star-2 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);	
+}
+
+.star-3 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);	
+}
+
+.star-4 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #dad5d5 0%, #dad5d5 50%, transparent 50%);
+}
+
+.star-5 {
+	background: radial-gradient(10px at 10% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 30% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 50% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 70% 50%, #4a4545 0%, #4a4545 50%, transparent 50%),
+	            radial-gradient(10px at 90% 50%, #4a4545 0%, #4a4545 50%, transparent 50%);	
+}
+
+.work {
+	position: relative;
+	cursor: pointer;
+}
+
+.work:before, .work:after {
+	border-bottom: 1px solid #144e25;
+	position: absolute;
+}
+
+.work:after {
+	content: attr(data-info);
+	/*right: -328px;*/
+	bottom: 200%;
+	background-color: #fff;
+	min-width: 40%;;
+	z-index: 10;
+	padding: 0px 10px;
+	white-space: nowrap;
+	display: none;
+	color: #274417;
+}
+
+.work:before {
+	content: "";
+	transform: rotate(-45deg);
+	bottom: 150%;
+	left: 100%;
+	width: 40px;
+	z-index: 9;
+	display: none;
+}
+
+.work:hover:after, .work:hover:before {
+	display: inline-block;
+}
+
+.passage {
+	line-height: 1.6;
+}
+.passage p {
+	text-indent: 2em;
+}
