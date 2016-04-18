@@ -55,7 +55,7 @@ var mainInfo = {
 			{"period": "2014.5 – ", "details": "喜地电子商务有限公司", "info": "负责公司后台管理系统, 使用phalcon, http://www.xidibuy.com/"},
 			{"period": "2013.6 – 2014.5", "details": "瑞友科技软件公司", "info": "外包公司, 做的是内部电梯管理系统, 使用zend framework"},
 			{"period": "2011.11 - 2013.6", "details": "开联通网络技术服务有限公司", "info": "ecshop二次开发商城, 公司已卖- - |"},
-			{"period": "2010.3 - 2011.3", "details": "zencart二次开发商城, 外贸公司, 已倒", "info": "美创贸易北京分公司"},
+			{"period": "2010.3 - 2011.3", "details": "美创贸易北京分公司", "info": "zencart二次开发商城, 外贸公司, 已倒"},
 			{"period": "2009.5 - 2010.3", "details": "广州特泊儿珠宝公司", "info": "外贸公司, 仍然坚挺, 主站还跟6年前一样, - - |, http://www.topearl.com/"}
 		]
 	},
@@ -76,3 +76,4 @@ ReactDOM.render(
 	document.getElementById("main")
 );
 
+console.log("我的pdf简历", "http://4nix.github.io/resume/%E6%AD%A6%E7%BB%AD%E6%B6%9B%E7%9A%84%E7%AE%80%E5%8E%86.pdf");
