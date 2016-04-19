@@ -3,13 +3,16 @@ require.config({
 		"jquery": "../jquery.min",
 		"eyes": "eyes",
 		"consoleLocal": "consoleLocal"
-	}
+	},
+	urlArgs: "v=" + (new Date()).getTime()
 });
 
 
 require(["eyes", "jquery"], function(eyes, jquery) {
- 	var canvasObj = eyes.draw("...你是一条咸鱼...")
+ 	var canvasObj;
+
 	$("#nav_eye").mouseover(function() {
+		canvasObj = eyes.draw("...你是一条咸鱼...");
 		eyes.reset();
   		canvasObj.fadeIn("slow");
 	  	$("header, nav").animate({
@@ -21,6 +24,8 @@ require(["eyes", "jquery"], function(eyes, jquery) {
 
 	$("#nav_eye").mouseout(function() {
 		canvasObj.fadeOut(500);
+		eyes.clear();
+		canvasObj.remove();
 		$("header, nav").animate({
 			"opacity":1
 		}, 500);

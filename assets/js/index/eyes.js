@@ -16,9 +16,15 @@ define(['jquery'], function(jquery) {
 		reset: function() {
 			// iEye = 0;
 			// iSpot = 0;	//动画计数
-			// window.cancelAnimationFrame(ani);
+			ctx.clearRect(0, 0, screenWidth, screenHeight);
+			window.cancelAnimationFrame(ani);
 			// debug++;
 		},
+
+		clear: function() {
+			window.cancelAnimationFrame(ani);
+		},
+
 		open: function() {
 			var iEye = 0;
 			var iSpot = 0;
@@ -28,6 +34,7 @@ define(['jquery'], function(jquery) {
 				// ctx.beginPath();
 				// ctx.fillStyle = "#000";
 				// ctx.fillRect(0, 0, screenWidth, screenHeight);
+				ctx.clearRect(0, 0, screenWidth, screenHeight);
 				ctx.save();
 
 				ctx.translate(screenWidth/2, screenHeight/2);
@@ -96,6 +103,12 @@ define(['jquery'], function(jquery) {
 						"background-color": "#000"
 					});
 			ctx = canvas[0].getContext("2d");
+
+			//改变窗口时处理
+			window.onresize = function() {
+	            ctx.width = window.innerWidth;
+	            ctx.height = window.innerHeight
+	        }
 
 			canvas.appendTo("body");
 
