@@ -9,23 +9,17 @@ require.config({
 
 
 require(["eyes", "jquery"], function(eyes, jquery) {
- 	var canvasObj;
-
+ 	eyes.init("...你是一条咸鱼...");
+ 	
 	$("#nav_eye").mouseover(function() {
-		canvasObj = eyes.draw("...你是一条咸鱼...");
-		eyes.reset();
-  		canvasObj.fadeIn("slow");
+		eyes.show();
 	  	$("header, nav").animate({
 	  		"opacity":0
-	  	}, 1000, function() {
-	  		eyes.open();
-	  	});
+	  	}, 1000);
   	});
 
 	$("#nav_eye").mouseout(function() {
-		canvasObj.fadeOut(500);
 		eyes.clear();
-		canvasObj.remove();
 		$("header, nav").animate({
 			"opacity":1
 		}, 500);

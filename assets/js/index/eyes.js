@@ -1,6 +1,7 @@
 define(['jquery'], function(jquery) {
 	var $this;
 	var ctx;
+	var canvas;
 	// var iEye = 0;
 	// var iSpot = 0;	//动画计数
 
@@ -13,6 +14,13 @@ define(['jquery'], function(jquery) {
 	// var debug = 1;
 
 	return {
+		init: function(text) {
+			$this = this;
+			$this.text = text;
+
+			// $this.draw();
+		},
+
 		reset: function() {
 			// iEye = 0;
 			// iSpot = 0;	//动画计数
@@ -22,7 +30,18 @@ define(['jquery'], function(jquery) {
 		},
 
 		clear: function() {
+			canvas.fadeOut(500);
 			window.cancelAnimationFrame(ani);
+
+			canvas.remove();
+		},
+
+		show: function() {
+			$this.draw();
+			$this.reset();
+			canvas.fadeIn("slow", function() {
+				$this.open();
+			});
 		},
 
 		open: function() {
@@ -74,7 +93,7 @@ define(['jquery'], function(jquery) {
 				//文f字
 				ctx.fillStyle = "#fff";
 				ctx.font = "40px FZShuTi";
-				ctx.fillText(text, -140, 80);
+				ctx.fillText($this.text, -140, 80);
 
 
 				ctx.restore();
@@ -88,13 +107,13 @@ define(['jquery'], function(jquery) {
 			
 			drawIt();
 		},
-		draw: function(txt) {
-			$this = this;
-			text = txt;
+		draw: function() {
+			// $this = this;
+			// text = txt;
 			screenWidth = $(document).width();
 			screenHeight = $(document).height();
 
-			var canvas = $("<canvas width='"+screenWidth+"' height='"+screenHeight+"'>");
+			canvas = $("<canvas width='"+screenWidth+"' height='"+screenHeight+"'>");
 			canvas.css({"position": "absolute", 
 						"z-index": -1, 
 						"top": 0, 
