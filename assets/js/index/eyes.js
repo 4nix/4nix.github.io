@@ -125,8 +125,8 @@ define(['jquery'], function(jquery) {
 
 			//改变窗口时处理
 			window.onresize = function() {
-	            ctx.width = window.innerWidth;
-	            ctx.height = window.innerHeight
+				ctx.width = screenWidth = $(document).width();
+				ctx.height = screenHeight = $(document).height();
 	        }
 
 			canvas.appendTo("body");

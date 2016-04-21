@@ -26,6 +26,24 @@ require(["eyes", "jquery"], function(eyes, jquery) {
 	});
 });
 
+require(["weather", "jquery"], function(weather, jquery) {
+ 	weather.init();
+ 	
+	$("#nav_blog").mouseover(function() {
+		weather.show();
+	  	$("header, nav").animate({
+	  		"opacity":0
+	  	}, 1000);
+  	});
+
+	$("#nav_blog").mouseout(function() {
+		weather.clear();
+		$("header, nav").animate({
+			"opacity":1
+		}, 500);
+	});
+});
+
 
 require(["consoleLocal"], function(consoleLocal) {
 	consoleLocal.draw("咸鱼...咸鱼...")
