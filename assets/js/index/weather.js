@@ -77,6 +77,12 @@ define(['jquery'], function(jquery) {
 		paint: function() {
 			var pic = weatherPic.hasOwnProperty(currentConditionLetter[0]) ? weatherPic[currentConditionLetter[0]] : weatherPic.default;
 			canvas.css("background-image","url(assets/images/" + pic + ")");
+
+			//文f字
+			ctx.fillStyle = "#fff";
+			ctx.font = "40px 微软雅黑";
+			ctx.fillText(currentCity + ", " + currentCondition[0] + " " + currentDegree[0] + " ~ " + currentDegree[1] + " ℃, " + "风速 " + currentWind[0] + " - " + currentWind[1] + "级", 
+				screenWidth - 644, 80);
 		},
 
 		draw: function() {
