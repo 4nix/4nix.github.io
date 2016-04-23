@@ -26,6 +26,7 @@ define(['jquery'], function(jquery) {
 			};
 
 			$this.getWeather();
+			$this.preload();
 		},
 
 		getWeather: function() {
@@ -45,7 +46,7 @@ define(['jquery'], function(jquery) {
 		                currentCondition = [weatherInfo.s1, weatherInfo.s2];
 		                currentConditionLetter = [weatherInfo.f1, weatherInfo.f2];
 		                currentDegree = [weatherInfo.t1, weatherInfo.t2];
-		                currentWind = weatherInfo.p1.split("-");
+		                currentWind = weatherInfo.p1;
 		            }
 		        });
 		    });
@@ -63,7 +64,7 @@ define(['jquery'], function(jquery) {
 			canvas.remove();
 		},
 
-		show: function() {console.log('a00');
+		show: function() {
 			$this.draw();
 			$this.reset();
 
@@ -81,8 +82,14 @@ define(['jquery'], function(jquery) {
 			//文f字
 			ctx.fillStyle = "#fff";
 			ctx.font = "40px 微软雅黑";
-			ctx.fillText(currentCity + ", " + currentCondition[0] + " " + currentDegree[0] + " ~ " + currentDegree[1] + " ℃, " + "风速 " + currentWind[0] + " - " + currentWind[1] + "级", 
+			ctx.fillText(currentCity + ", " + currentCondition[0] + " " + currentDegree[0] + " ~ " + currentDegree[1] + " ℃, " + "风速 " + currentWind + "级", 
 				screenWidth - 644, 80);
+		},
+
+		preload: function() {
+			for (var pic in weatherPic) {
+				new Image().src = 'assets/images/' + weatherPic[pic];
+			}
 		},
 
 		draw: function() {
