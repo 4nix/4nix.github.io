@@ -87,7 +87,7 @@ define(['jquery'], function(jquery) {
 			ctx.fillText(txt, screenWidth - width - 40, 80);
 
 			iSpot = 0;
-			$this.sunshine();
+			// $this.rain();
 		},
 
 		preload: function() {
@@ -196,7 +196,32 @@ define(['jquery'], function(jquery) {
 
 		//雨
 		rain: function() {
+			// ctx.save();
 
+			// //雨线
+			// var line = 300;
+			// ctx.translate(0, 0);
+			// ctx.beginPath();
+			// ctx.moveTo(0, 0);
+			// ctx.lineTo(510, 500);
+			// ctx.strokeStyle = "#fff";
+			// ctx.stroke();
+
+			
+			//雨圈
+			// ctx.beginPath();
+			// var x = 200;
+			// var y = 200;
+			// var width = 200;
+			// var height = 200;
+			// var k = (height/2)/2;
+
+			// ctx.moveTo(x, y);
+			// ctx.bezierCurveTo(x, y + k, x + width, y + k, x + width, y);
+			// ctx.bezierCurveTo(x + width, y - k, x, y - k, x, y);
+			// ctx.stroke();
+
+			// ctx.restore();
 		},
 
 		//雪
