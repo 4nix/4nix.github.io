@@ -10,6 +10,7 @@ define(['jquery'], function(jquery) {
 	var canvas;
 	var ctx;
 	var ani;
+	var iSpot;
 
 	var weatherPic;	//天气图片对应表
 
@@ -57,12 +58,7 @@ define(['jquery'], function(jquery) {
 			window.cancelAnimationFrame(ani);
 		},
 
-		clear: function() {
-			canvas.fadeOut(500);
-			window.cancelAnimationFrame(ani);
-
-			canvas.remove();
-		},
+		
 
 		show: function() {
 			$this.draw();
@@ -76,14 +72,22 @@ define(['jquery'], function(jquery) {
 		},
 
 		paint: function() {
+
 			var pic = weatherPic.hasOwnProperty(currentConditionLetter[0]) ? weatherPic[currentConditionLetter[0]] : weatherPic.default;
 			canvas.css("background-image","url(assets/images/" + pic + ")");
 
 			//文f字
+			var txt = currentCity + ", " + currentCondition[0] + " " + currentDegree[0] + " ~ " + currentDegree[1] + " ℃, " + "风速 " + currentWind + "级";
 			ctx.fillStyle = "#fff";
 			ctx.font = "40px 微软雅黑";
-			ctx.fillText(currentCity + ", " + currentCondition[0] + " " + currentDegree[0] + " ~ " + currentDegree[1] + " ℃, " + "风速 " + currentWind + "级", 
-				screenWidth - 644, 80);
+
+			var metrics = ctx.measureText(txt);
+      		var width = metrics.width;
+
+			ctx.fillText(txt, screenWidth - width - 40, 80);
+
+			iSpot = 0;
+			$this.sunshine();
 		},
 
 		preload: function() {
@@ -116,7 +120,106 @@ define(['jquery'], function(jquery) {
 			return canvas;
 		},
 
-		
+
+		//阳光
+		sunshine: function() {
+			ctx.save();
+
+			ctx.clearRect(0, 0, screenWidth, screenHeight);
+			ctx.translate(340, 130);
+			ctx.rotate((iSpot)*Math.PI/180); 
+
+			//最大光圈半径
+			var maxRadian = 240;
+			//光线位置, 值为角度
+			var pathLine = [0, 60, 120, 180, 240, 300];
+			//光圈在光线上的位置, 为最大屏幕的百分比
+			var pathRadian = [0.1, 0.3, 0.4, 0.8];
+
+			//线渐变
+			var lineGradient = ctx.createLinearGradient(0, 0, screenWidth, screenHeight);
+			lineGradient.addColorStop(0, "rgba(255, 255, 255, 0)");
+			lineGradient.addColorStop(0.05, "rgba(255, 255, 255, 0)");
+			lineGradient.addColorStop(0.12, "rgba(255, 255, 255, 0.3)");
+			lineGradient.addColorStop(0.5, "rgba(255, 255, 255, 0)");
+
+			for (var i in pathLine) {
+				ctx.save();
+				ctx.rotate(pathLine[i]*Math.PI/180);
+				//光线
+				ctx.beginPath();
+				ctx.moveTo(0,0);
+				ctx.lineTo(screenWidth, 0);
+				ctx.rotate(10*Math.PI/180);
+				ctx.lineTo(screenWidth, 0);
+				ctx.fillStyle = lineGradient;
+				ctx.fill();
+
+				//光圈
+				ctx.save();
+				ctx.rotate(-5*Math.PI/180);
+				var offsetRadian = (iSpot % 250)*0.004;
+				pathRadian.forEach(function(j) {
+					
+					var _path = j + offsetRadian;
+					_path = _path >= 1 ? _path - 1 : _path;
+
+					if (_path <= 0.08) {
+						return;
+					}
+
+					
+					//圆渐变
+					var radianGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, maxRadian*_path);
+					radianGradient.addColorStop(0, "rgba(255, 255, 255, 0)");
+					radianGradient.addColorStop(0.99, "rgba(255, 255, 255, 0.3)");
+					radianGradient.addColorStop(1, "rgba(255, 255, 255, 0.6)");
+
+					ctx.save();
+					ctx.translate(screenWidth*_path, 0);
+					ctx.beginPath();
+					ctx.arc(0, 0, maxRadian*_path, 0, 2*Math.PI);
+					ctx.fillStyle = radianGradient;
+					ctx.fill();
+					ctx.restore();
+				});
+				ctx.restore();
+
+				ctx.restore();	//还原光线
+			}
+
+			ctx.restore();
+
+			iSpot += 0.5;
+			ani = window.requestAnimationFrame($this.sunshine);
+		},
+
+		//雨
+		rain: function() {
+
+		},
+
+		//雪
+		snow: function() {
+
+		},
+
+		//多云
+		cloud: function() {
+
+		},
+
+		//天气信息
+		weatherInfo: function() {
+
+		},
+
+		clear: function() {
+			canvas.fadeOut(500);
+			window.cancelAnimationFrame(ani);
+
+			canvas.remove();
+		}
 
 	}
 	
