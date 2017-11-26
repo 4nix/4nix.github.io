@@ -1,17 +1,714 @@
 <!DOCTYPE html>
-<head>
-	<title>武续涛的简历</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="assets/css/base.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/resume.css">
-	
-</head>
-<body>
-	<header id="header"></header>
-	
-	<main id="main"></main>
-	
-	<script src="build/common.js"></script>
-	<script src="build/bundle.js"></script>
-</body>
+<html lang="en" class="no-js">
+  <!-- BEGIN HEAD -->
+  <head>
+    <meta charset="utf-8"/>
+    <title>5z's Resume</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+
+    <!-- GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- PAGE LEVEL PLUGIN STYLES -->
+    <link href="css/animate.css" rel="stylesheet">
+
+    <!-- THEME STYLES -->
+    <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+
+    <style type="text/css">
+      .work-intro {
+        position: absolute;
+        top: 66%;
+        color: #ffe;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <!-- END HEAD -->
+
+  <!-- BODY -->
+  <body id="body" data-spy="scroll" data-target=".header">
+
+    <!--========== HEADER ==========-->
+    <header class="header navbar-fixed-top">
+      <!-- Navbar -->
+      <nav class="navbar" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="menu-container js_nav-item">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="toggle-icon"></span>
+            </button>
+
+            <!-- Logo -->
+            <div class="logo">
+              <a class="logo-wrap" href="#body">
+                <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
+                <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
+              </a>
+            </div>
+            <!-- End Logo -->
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-collapse">
+            <div class="menu-container">
+              <ul class="nav navbar-nav navbar-nav-right">
+                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#body">Home</a></li>
+                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">About</a></li>
+                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#experience">Experience</a></li>
+                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#work">Work</a></li>
+                <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- End Navbar Collapse -->
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <!--========== END HEADER ==========-->
+
+    <!--========== SLIDER ==========-->
+    <div class="promo-block parallax-window" data-parallax="scroll" data-image-src="img/1920x1080/04.jpg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="promo-block-divider">
+              <h1 class="promo-block-title">5z</h1>
+              <p class="promo-block-text">PHP开发工程师 &amp; 前端开发工程师</p>
+            </div>
+            <ul class="list-inline">
+              <!-- <li><a href="#" class="social-icons"><i class="icon-social-facebook"></i></a></li>
+              <li><a href="#" class="social-icons"><i class="icon-social-twitter"></i></a></li>
+              <li><a href="#" class="social-icons"><i class="icon-social-dribbble"></i></a></li>
+              <li><a href="#" class="social-icons"><i class="icon-social-behance"></i></a></li>
+              <li><a href="#" class="social-icons"><i class="icon-social-linkedin"></i></a></li> -->
+            </ul>
+          </div>
+        </div>
+        <!--// end row -->
+      </div>
+    </div>
+    <!--========== SLIDER ==========-->
+
+    <!--========== PAGE LAYOUT ==========-->
+    <!-- About -->
+    <div id="about">
+      <div class="container content-lg">
+        <div class="row">
+          <div class="col-sm-3 sm-margin-b-30">
+            <div class="text-right sm-text-left">
+              <h2 class="margin-b-0">Intro</h2>
+              <p>This is me.</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-sm-offset-1">
+            <div class="margin-b-60">
+              <p>我喜欢前端.</p>
+              <p>7年php开发经验, 1年前端独立开发经验. 工作主要偏重商城系统.</p>
+              <p>目前就职于博彦(外派新浪微博)科技, 现属垂直运营部门, 也在微博会员担任过短期研发, 属于哪里有坑填哪里. 现在的主要工作是为垂直部门做前端支持, 也负责前后端交互的接口开发和联调.</p>
+              <p>php方面使用过yaf, phalcon, thinkphp, ecshop, zencart等.</p>
+              <p>js方面用过vue, react, stk(新浪内部前端框架).</p>
+            </div>
+
+            <!-- Progress Box -->
+            <div class="progress-box">
+              <h5>PHP <span class="color-heading pull-right">85%</span></h5>
+              <div class="progress">
+                <div class="progress-bar bg-color-base" role="progressbar" data-width="85"></div>
+              </div>
+            </div>
+            <div class="progress-box">
+              <h5>JavaSript <span class="color-heading pull-right">80%</span></h5>
+              <div class="progress">
+                <div class="progress-bar bg-color-base" role="progressbar" data-width="80"></div>
+              </div>
+            </div>
+            <div class="progress-box">
+              <h5>Linux <span class="color-heading pull-right">60%</span></h5>
+              <div class="progress">
+                <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+              </div>
+            </div>
+            <div class="progress-box">
+              <h5>MySQL <span class="color-heading pull-right">75%</span></h5>
+              <div class="progress">
+                <div class="progress-bar bg-color-base" role="progressbar" data-width="75"></div>
+              </div>
+            </div>
+            <div class="progress-box">
+              <h5>Git <span class="color-heading pull-right">60%</span></h5>
+              <div class="progress">
+                <div class="progress-bar bg-color-base" role="progressbar" data-width="60"></div>
+              </div>
+            </div>
+            <!-- End Progress Box -->
+          </div>
+        </div>
+        <!--// end row -->
+      </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Experience -->
+    <div id="experience">
+      <div class="bg-color-sky-light" data-auto-height="true">
+        <div class="container content-lg">
+          <div class="row">
+            <div class="col-sm-3 sm-margin-b-30">
+              <div class="text-right sm-text-left">
+                <h2 class="margin-b-0">Experience</h2>
+                <p>项目经验.</p>
+              </div>
+            </div>
+            <div class="col-sm-8 col-sm-offset-1">
+
+              <div class="row row-space-2 margin-b-4">
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service" data-height="height">
+                    <div class="service-element">
+                      <i class="service-icon icon-chemistry"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3>新浪微博 2017V峰会</h3>
+                      <p class="margin-b-5">
+                        1. 使用webpack+es6实现前端h5页面交互 <br>
+                        2. 使用canvas本地生成用户兴趣墙图片, 采用axios插件上传, 减少服务端压力
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                    <div class="service-element">
+                      <i class="service-icon color-white icon-screen-tablet"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3 class="color-white">微博故事墙</h3>
+                      <p class="color-white margin-b-5">
+                      1. 使用webpack+es5实现前端交互<br>
+                      2. 重写各类通用组建, 便于其它项目复用, 缩短开发周期
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="service" data-height="height">
+                    <div class="service-element">
+                      <i class="service-icon icon-badge"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3>微博个人认证改版</h3>
+                      <p class="margin-b-5">
+                        1. 使用webpack+es6实现前端交互<br>
+                        2. 迁移旧版stk的前端功能至新环境, 使用新版发布系统+git优化上线流程
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+              </div>
+              <!--// end row -->
+
+              <div class="row row-space-2 margin-b-4">
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                    <div class="service-element">
+                      <i class="service-icon color-white icon-screen-tablet"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3 class="color-white">微博自媒体成长体系</h3>
+                      <p class="color-white margin-b-5">
+                      1. 使用stk, php完成前后端功能<br>
+                      2. 使用定时脚本被动更新用户等级和主动检测策略更新遗漏的用户等级信息
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service" data-height="height">
+                    <div class="service-element">
+                      <i class="service-icon icon-chemistry"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3>微博广告开户h5端</h3>
+                      <p class="margin-b-5">
+                        1. 使用webpack+vue+eslint实现单页应用
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                    <div class="service-element">
+                      <i class="service-icon color-white icon-screen-tablet"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3 class="color-white">微博2016小伙伴</h3>
+                      <p class="color-white margin-b-5">
+                      1. 使用canvas本地生成微博用户2016年数据统计<br>
+                      2. 使用canvas绘图特点实现刮刮卡效果实现刮奖功能
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+              </div>
+              <!--// end row -->
+
+              <div class="row row-space-2 margin-b-4">
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service" data-height="height">
+                    <div class="service-element">
+                      <i class="service-icon icon-chemistry"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3>微博会员生日祝福</h3>
+                      <p class="margin-b-5">
+                        1. 使用yaf框架开发后端<br>
+                        2. 使用memechached缓存多媒体链接, 防止链接失效, 并提供服务端性能 <br>
+                        3. 使用队列机制对明星类的高并发评论进行限流<br>
+                        4. 使用redis缓存替代数据库存储, 对防止用户重复评论进行降级
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                    <div class="service-element">
+                      <i class="service-icon color-white icon-screen-tablet"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3 class="color-white">微博会员售后服务优化</h3>
+                      <p class="color-white margin-b-5">
+                      1. 整合多个部门会员订购与退订数据, 统一化管理会员退订服务
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="service" data-height="height">
+                    <div class="service-element">
+                      <i class="service-icon icon-badge"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3>新浪微博 2016V峰会</h3>
+                      <p class="margin-b-5">
+                        1. 使用stk开发前端, 实现滑屏和滚动等交互效果<br>
+                        2. 利用canvas监听视频播放特性, 采用实时绘图达到去除ios端默认播放器控件
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+              </div>
+              <!--// end row -->
+
+              <div class="row row-space-2 margin-b-4">
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                    <div class="service-element">
+                      <i class="service-icon color-white icon-basket"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3 class="color-white">源产喜地商城系统</h3>
+                      <p class="color-white margin-b-5">
+                      1. 使用php + phalcon开发商城后台系统
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+
+                <div class="col-md-4 md-margin-b-4">
+                  <div class="service" data-height="height">
+                    <div class="service-element">
+                      <i class="service-icon icon-basket"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3>开联商城</h3>
+                      <p class="margin-b-5">
+                        1. 使用ecshop 二次开发商城系统
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+                
+                <div class="col-md-4">
+                  <div class="service bg-color-base wow zoomIn" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+                    <div class="service-element">
+                      <i class="service-icon color-white icon-basket"></i>
+                    </div>
+                    <div class="service-info">
+                      <h3 class="color-white">特波儿外贸商城</h3>
+                      <p class="color-white margin-b-5">
+                      1. 使用zencart二次开发商城系统
+                      </p>
+                    </div>
+                    <a href="javascript:;" class="content-wrapper-link"></a>    
+                  </div>
+                </div>
+              </div>
+              <!--// end row -->
+
+            </div>
+          </div>
+          <!--// end row -->
+        </div>
+      </div>
+    </div>
+    <!-- End Experience -->
+
+    <!-- Work -->
+    <div id="work">
+      <div class="container content-lg">
+        <div class="row">
+          <div class="col-sm-3 sm-margin-b-30">
+            <div class="text-right sm-text-left">
+              <h2 class="margin-b-0">Works</h2>
+              <p>工作经历.</p>
+            </div>
+          </div>
+          <div class="col-sm-8 col-sm-offset-1">
+            <!-- Masonry Grid -->
+            <div class="masonry-grid row row-space-2">
+              <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+              <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
+                <!-- Work -->
+                <div class="work work-popup-trigger">
+                  <div class="work-overlay">
+                    <img class="full-width img-responsive" src="img/800x400/01.jpg" alt="Portfolio Image">
+                  </div>
+                  <div class="work-intro">北京博彦科技, 2016.8 - </div>
+                  <div class="work-popup-overlay">
+                    <div class="work-popup-content">
+                      <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                      <div class="margin-b-30">
+                        <h3 class="margin-b-5">北京博彦科技(外派新浪微博)</h3>
+                        <span>2016.8 - </span>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 sm-margin-b-20">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p>1. 在微博会员部门担任php开发工程师, 负责过会员福利下发, 生日祝福, 会员退订, 会员星座等项目</p>
+                            <p>2. 在企业服务部门担任php开发工程师, 负责cm系统研发</p>
+                            <p>3. 在垂直搜索部担任php开发工程师&前端工程师, 负责自媒体认证前后端, 个人认证前端和各类活动前端交互等项目</p>
+                            <ul class="list-inline work-popup-tag">
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">php,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">yaf,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">vue,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">webpack,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">es6,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">stk,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">jq,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">css,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">linux,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">memcached,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">redis,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">nginx,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">queue,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">mysql,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">git,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">svn</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      <!--   <div class="col-sm-4">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                            <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                            <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                            <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Work -->
+              </div>
+              <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
+                <!-- Work -->
+                <div class="work work-popup-trigger">
+                  <div class="work-overlay">
+                    <img class="full-width img-responsive" src="img/397x400/01.jpg" alt="Portfolio Image">
+                  </div>
+                  <div class="work-intro">北京喜地电子商务, 2014.5 - 2016.8</div>
+                  <div class="work-popup-overlay">
+                    <div class="work-popup-content">
+                      <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                      <div class="margin-b-30">
+                        <h3 class="margin-b-5">北京喜地电子商务</h3>
+                        <span>2014.5 - 2016.8</span>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 sm-margin-b-20">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p>1. 负责大运营平台系统, 主要开发订单管理, 商品定价, 用户管理, 评论管理等.</p>
+                            <p>2. 负责世界超市前台开发, 以搜索引擎优化, 用户导流为主要工作内容</p>
+                            <ul class="list-inline work-popup-tag">
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">php,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">phalcon,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">linux,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">nginx,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">mysql,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">memcached,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">redis,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">js,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">sea.js</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">svn</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      <!--   <div class="col-sm-4">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                            <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                            <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                            <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Work -->
+              </div>
+              <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                <!-- Work -->
+                <div class="work work-popup-trigger">
+                  <div class="work-overlay">
+                      <img class="full-width img-responsive" src="img/397x300/01.jpg" alt="Portfolio Image">
+                  </div>
+                  <div class="work-intro">北京开联科技信息, 2010.3 - 2014.4</div>
+                  <div class="work-popup-overlay">
+                    <div class="work-popup-content">
+                      <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                      <div class="margin-b-30">
+                        <h3 class="margin-b-5">北京开联科技信息</h3>
+                        <span>2010.3 - 2014.4</span>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 sm-margin-b-20">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p>主要负责与供应商做接口联调和订单同步, 还有部分订单, 商品优化等工作.</p>
+                            <p>期间接过大量商城相关的兼职.</p>
+                            <ul class="list-inline work-popup-tag">
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">php,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">eschop,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">thinkphp,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">mysql,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">svn</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-4">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                            <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                            <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                            <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Work -->
+              </div>
+              <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
+                <!-- Work -->
+                <div class="work work-popup-trigger">
+                  <div class="work-overlay">
+                    <img class="full-width img-responsive" src="img/397x300/02.jpg" alt="Portfolio Image">
+                  </div>
+                  <div class="work-intro">广州特波儿电子商务, 2009.6 - 2010.3</div>
+                  <div class="work-popup-overlay">
+                    <div class="work-popup-content">
+                      <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                      <div class="margin-b-30">
+                        <h3 class="margin-b-5">广州特波儿电子商务</h3>
+                        <span>2009.6 - 2010.3</span>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 sm-margin-b-20">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p>主要负责商城的二次开发, 多个商城的订单的统一整合.</p>
+                            <p>短期内带过三人小团队- -.</p>
+                            <ul class="list-inline work-popup-tag">
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">php,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">zencart,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">mysql,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="javascript:;">svn</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                       <!--  <div class="col-sm-4">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                            <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                            <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                            <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Work -->
+              </div>
+
+              <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
+                <div class="work work-popup-trigger">
+                  <div class="work-overlay">
+                    <img class="full-width img-responsive" src="img/397x300/03.jpg" alt="Portfolio Image">
+                  </div>
+                  <div class="work-popup-overlay">
+                    <div class="work-popup-content">
+                      <a href="javascript:void(0);" class="work-popup-close">Hide</a>
+                      <div class="margin-b-30">
+                        <h3 class="margin-b-5">blank</h3>
+                        <span></span>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12 sm-margin-b-20">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p>凑图.</p>
+                            <!-- <ul class="list-inline work-popup-tag">
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Design,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Coding,</a></li>
+                              <li class="work-popup-tag-item"><a class="work-popup-tag-link" href="#">Portfolio</a></li>
+                            </ul> -->
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-4">
+                          <div class="margin-t-10 sm-margin-t-0">
+                            <p class="margin-b-5"><strong>Project Leader:</strong> John Doe</p>
+                            <p class="margin-b-5"><strong>Designer:</strong> Alisa Keys</p>
+                            <p class="margin-b-5"><strong>Developer:</strong> Mark Doe</p>
+                            <p class="margin-b-5"><strong>Customer:</strong> Keenthemes</p>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- End Masonry Grid -->
+          </div>
+        </div>
+        <!--// end row -->
+      </div>
+    </div>
+    <!-- End Work -->
+        
+    <!-- Contact -->
+    <div id="contact">
+      <div class="bg-color-sky-light">
+        <div class="container content-lg">
+          <div class="row">
+            <div class="col-sm-3 sm-margin-b-30">
+              <div class="text-right sm-text-left">
+                <h2 class="margin-b-0">Contacts</h2>
+                <p>联系我.</p>
+              </div>
+            </div>
+            <div class="col-sm-8 col-sm-offset-1">
+              <div class="row">
+                <div class="col-md-3 col-xs-6 md-margin-b-30">
+                  <h5>Location</h5>
+                  <a href="javascript:;">Beijing</a>
+                </div>
+                <div class="col-md-3 col-xs-6 md-margin-b-30">
+                  <h5>Phone</h5>
+                  <a href="javascript:;">xxxxxxxxxx</a>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                  <h5>Email</h5>
+                  <a href="mailto:wublue1234@126.com">wublue1234@126.com</a>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                  <h5>Web</h5>
+                  <a href="javascript:;">4nix.github.io</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--// end row -->
+        </div>
+      </div>
+    </div>
+    <!-- End Contact -->
+    <!--========== END PAGE LAYOUT ==========-->
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer">
+      <div class="content container">
+        <div class="row">
+          <div class="col-xs-6">
+            <img class="footer-logo" src="img/logo-dark.png" alt="Aircv Logo">
+          </div>
+          <div class="col-xs-6 text-right sm-text-left">
+            <p class="margin-b-0">By 5z</p>
+          </div>
+        </div>
+        <!--// end row -->
+      </div>
+    </footer>
+    <!--========== END FOOTER ==========-->
+
+    <!-- Back To Top -->
+    <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+    <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- CORE PLUGINS -->
+    <script src="vendor/jquery.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- PAGE LEVEL PLUGINS -->
+    <script src="vendor/jquery.easing.js" type="text/javascript"></script>
+    <script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+    <script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+    <script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.parallax.min.js" type="text/javascript"></script>
+    <script src="vendor/jquery.appear.js" type="text/javascript"></script>
+    <script src="vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script src="js/layout.min.js" type="text/javascript"></script>
+    <script src="js/components/progress-bar.min.js" type="text/javascript"></script>
+    <script src="js/components/masonry.min.js" type="text/javascript"></script>
+    <script src="js/components/wow.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      console.log("%c", "padding:50px 300px;line-height:120px;background:url('https://4nix.github.io/img/offer.jpg') no-repeat;");
+      console.log("%c奈何新浪不给转成正式员工, 外包这条路全是泪, 珍爱生活, 远离外包.", "color: #17bed2;font-size: 1.4rem;")
+    </script>
+  </body>
+  <!-- END BODY -->
 </html>
