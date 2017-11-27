@@ -118,9 +118,9 @@
             <div class="margin-b-60">
               <p>我喜欢前端.</p>
               <p>7年php开发经验, 1年前端独立开发经验. 工作主要偏重商城系统.</p>
-              <p>目前就职于博彦(外派新浪微博)科技, 现属垂直运营部门, 也在微博会员担任过短期研发, 属于哪里有坑填哪里. 现在的主要工作是为垂直部门做前端支持, 也负责前后端交互的接口开发和联调.</p>
+              <p>目前就职于新浪微博(属外包), 现属垂直运营部门, 曾在微博会员和企业服务部担任过PHP研发. 现在的主要为微博认证, 各类活动做前端支持, 同时也负责自媒体认证前后端开发.</p>
               <p>php方面使用过yaf, phalcon, thinkphp, ecshop, zencart等.</p>
-              <p>js方面用过vue, react, stk(新浪内部前端框架).</p>
+              <p>js方面使用过vue, react, stk(新浪内部前端框架).</p>
             </div>
 
             <!-- Progress Box -->
@@ -184,8 +184,10 @@
                     <div class="service-info">
                       <h3>新浪微博 2017V峰会</h3>
                       <p class="margin-b-5">
-                        1. 使用webpack+es6实现前端h5页面交互 <br>
-                        2. 使用canvas本地生成用户兴趣墙图片, 采用axios插件上传, 减少服务端压力
+                        1. 使用webpack+es6实现前端h5页面交互 <br>
+                        2. 使用canvas绘图生成兴趣墙图片, 通过url-loader转换图片解决图片跨域问题<br>
+                        3. 使用axios代替传统ajax与后端交互, 塑造可读性更友好代码<br>
+                        4. 采用降级策略处理ios端媒体文件无法自动播放问题
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -199,8 +201,9 @@
                     <div class="service-info">
                       <h3 class="color-white">微博故事墙</h3>
                       <p class="color-white margin-b-5">
-                      1. 使用webpack+es5实现前端交互<br>
-                      2. 重写各类通用组建, 便于其它项目复用, 缩短开发周期
+                      1. 使用webpack+es6实现前端交互 <br>
+                      2. 尝试架构前端环境, 迁移原stk功能至新环境, 分离通用组件, 提高服用性<br>
+                      3. 使用新版发布系统+git优化上线流程
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -214,8 +217,9 @@
                     <div class="service-info">
                       <h3>微博个人认证改版</h3>
                       <p class="margin-b-5">
-                        1. 使用webpack+es6实现前端交互<br>
-                        2. 迁移旧版stk的前端功能至新环境, 使用新版发布系统+git优化上线流程
+                        1. 使用webpack+es5实现前端交互 <br>
+                        2. 重写通用组件, 提高复用性<br>
+                        3. 使用稍旧的es5语法便于其它非专业人士做简易更改
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -233,8 +237,8 @@
                     <div class="service-info">
                       <h3 class="color-white">微博自媒体成长体系</h3>
                       <p class="color-white margin-b-5">
-                      1. 使用stk, php完成前后端功能<br>
-                      2. 使用定时脚本被动更新用户等级和主动检测策略更新遗漏的用户等级信息
+                      1. 使用stk, php完成前后端功能 <br>
+                      2. 采用定时脚本和主动检测策略更新用户等级, 确保不会出现遗漏升级情况
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -249,7 +253,8 @@
                     <div class="service-info">
                       <h3>微博广告开户h5端</h3>
                       <p class="margin-b-5">
-                        1. 使用webpack+vue+eslint实现单页应用
+                        1. 使用webpack+vue+eslint实现单页应用<br>
+                        2. 整合jq, scss至webpack, 达到业务方的特殊需求
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -264,8 +269,8 @@
                     <div class="service-info">
                       <h3 class="color-white">微博2016小伙伴</h3>
                       <p class="color-white margin-b-5">
-                      1. 使用canvas本地生成微博用户2016年数据统计<br>
-                      2. 使用canvas绘图特点实现刮刮卡效果实现刮奖功能
+                      1. 使用canvas绘图生成用户数据图, 利用base64图片特点解决canvas图片跨域问题<br>
+                      2. 使用canvas绘图特点实现刮刮卡效果
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -283,9 +288,9 @@
                     <div class="service-info">
                       <h3>微博会员生日祝福</h3>
                       <p class="margin-b-5">
-                        1. 使用yaf框架开发后端<br>
-                        2. 使用memechached缓存多媒体链接, 防止链接失效, 并提供服务端性能 <br>
-                        3. 使用队列机制对明星类的高并发评论进行限流<br>
+                        1. 使用yaf框架开发后端  <br>
+                        2. 使用memechached缓存多媒体链接, 防止链接失效, 提高服务端性能  <br>
+                        3. 使用队列机制对明星类的高并发评论进行限流  <br>
                         4. 使用redis缓存替代数据库存储, 对防止用户重复评论进行降级
                       </p>
                     </div>
@@ -300,7 +305,8 @@
                     <div class="service-info">
                       <h3 class="color-white">微博会员售后服务优化</h3>
                       <p class="color-white margin-b-5">
-                      1. 整合多个部门会员订购与退订数据, 统一化管理会员退订服务
+                      1. 整合多个部门会员订购与退订数据, 统一化管理会员退订服务 <br>
+                      2. 统计订购/退订数据, 配合业务方调整售卖策略
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -314,8 +320,8 @@
                     <div class="service-info">
                       <h3>新浪微博 2016V峰会</h3>
                       <p class="margin-b-5">
-                        1. 使用stk开发前端, 实现滑屏和滚动等交互效果<br>
-                        2. 利用canvas监听视频播放特性, 采用实时绘图达到去除ios端默认播放器控件
+                        1. 使用stk开发前端, 实现滚屏和滑动头像等交互 <br>
+                        2. 利用canvas监听视频, 达到去除ios端默认播放器控件
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -333,7 +339,8 @@
                     <div class="service-info">
                       <h3 class="color-white">源产喜地商城系统</h3>
                       <p class="color-white margin-b-5">
-                      1. 使用php + phalcon开发商城后台系统
+                      1. 使用php + phalcon开发商城后台系统 <br>
+                      2. 使用php + phalcon开发世界超市系统, 优化搜素引擎, 为主站引流
                       </p>
                     </div>
                     <a href="javascript:;" class="content-wrapper-link"></a>    
@@ -707,7 +714,7 @@
 
     <script type="text/javascript">
       console.log("%c", "padding:50px 300px;line-height:120px;background:url('https://4nix.github.io/img/offer.jpg') no-repeat;");
-      console.log("%c无奈新浪不给转成正式员工, 女领导多次跑相关部门均无果. 外包这条路全是泪, 珍爱生活, 远离外包.", "color: #17bed2;font-size: .8rem;")
+      console.log("%c16年经内推入职新浪, 被告知所面试岗位达不到薪资要求, 面试官建议通过外包途径先入职, 等相应职位空缺后再转成正式员工, 结果入职不久后才发现并没有相关政策, 领导前后帮跑相关部门多次均未果. 外包这条路全是泪, 珍爱生活, 远离外包.", "color: #17bed2;font-size: .8rem;")
     </script>
   </body>
   <!-- END BODY -->
